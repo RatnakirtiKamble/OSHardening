@@ -1,0 +1,24 @@
+filesystem:
+  kernel_modules:
+    - name: cramfs
+      should_be_available: false
+    - name: freevxfs
+      should_be_available: false
+    - name: hfs
+      should_be_available: false
+    - name: hfsplus
+      should_be_available: false
+    - name: jffs2
+      should_be_available: false
+    - name: overlayfs
+      should_be_available: false
+    - name: squashfs
+      should_be_available: false
+    - name: udf
+      should_be_available: false
+    - name: usb-storage
+      should_be_available: false
+    - name: unused_filesystems
+      should_be_available: false
+
+      
