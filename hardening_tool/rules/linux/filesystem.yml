@@ -1,0 +1,63 @@
+filesystem:
+	kernel_modules:
+		- name: cramfs
+			should_be_available: false
+		- name: freevxfs
+			should_be_available: false
+		- name: hfs
+			should_be_available: false
+		- name: hfsplus
+			should_be_available: false
+		- name: jffs2
+			should_be_available: false
+		- name: overlayfs
+			should_be_available: false
+		- name: squashfs
+			should_be_available: false
+		- name: udf
+			should_be_available: false
+		- name: usb-storage
+			should_be_available: false
+		- name: unused_filesystems
+			should_be_available: false
+	partitions:
+		- mount_point: /tmp
+			separate_partition: true
+			options:
+				nodev: true
+				nosuid: true
+				noexec: true
+		- mount_point: /dev/shm
+			separate_partition: true
+			options:
+				nodev: true
+				nosuid: true
+				noexec: true
+		- mount_point: /home
+			separate_partition: true
+			options:
+				nodev: true
+				nosuid: true
+		- mount_point: /var
+			separate_partition: true
+			options:
+				nodev: true
+				nosuid: true
+		- mount_point: /var/tmp
+			separate_partition: true
+			options:
+				nodev: true
+				nosuid: true
+				noexec: true
+		- mount_point: /var/log
+			separate_partition: true
+			options:
+				nodev: true
+				nosuid: true
+				noexec: true
+		- mount_point: /var/log/audit
+			separate_partition: true
+			options:
+				nodev: true
+				nosuid: true
+				noexec: true
