@@ -1,0 +1,65 @@
+logging_and_auditing:
+  system_logging:
+    journald:
+      service_enabled_and_active: true
+      log_file_access_configured: true
+      log_file_rotation_configured: true
+      only_one_logging_system_in_use: true
+    rsyslog:
+      installed: true
+      service_enabled_and_active: true
+      journald_sends_to_rsyslog: true
+      log_file_creation_mode_configured: true
+      logging_configured: true
+      sends_logs_to_remote_host: true
+      not_configured_to_receive_logs: true
+    logrotate_configured: true
+    logfiles_access_configured: true
+  system_auditing:
+    auditd_service:
+      packages_installed: true
+      service_enabled_and_active: true
+      auditing_for_pre-start_processes_enabled: true
+      audit_backlog_limit_sufficient: true
+    data_retention:
+      log_storage_size_configured: true
+      logs_not_auto_deleted: true
+      system_disabled_when_logs_full: true
+      system_warns_on_low_space: true
+    auditd_rules:
+      collect_sudoers_changes: true
+      log_actions_as_another_user: true
+      collect_sudo_log_file_events: true
+      collect_date_time_modification_events: true
+      collect_network_environment_modification_events: true
+      collect_privileged_command_usage: true
+      collect_unsuccessful_file_access: true
+      collect_user_group_modification_events: true
+      collect_dac_permission_modification_events: true
+      collect_successful_mounts: true
+      collect_session_initiation_info: true
+      collect_login_logout_events: true
+      collect_user_file_deletion_events: true
+      collect_mac_modification_events: true
+      collect_chcon_attempts: true
+      collect_setfacl_attempts: true
+      collect_chacl_attempts: true
+      collect_usermod_attempts: true
+      collect_kernel_module_loading: true
+      audit_config_immutable: true
+      running_and_disk_config_are_same: true
+    auditd_file_access:
+      log_files_mode_configured: true
+      log_files_owner_configured: true
+      log_files_group_owner_configured: true
+      log_dir_mode_configured: true
+      config_files_mode_configured: true
+      config_files_owner_configured: true
+      config_files_group_owner_configured: true
+      tools_mode_configured: true
+      tools_owner_configured: true
+      tools_group_owner_configured: true
+    integrity_checking:
+      aide_installed: true
+      filesystem_integrity_regularly_checked: true
+      crypto_mechanisms_protect_audit_tools: true

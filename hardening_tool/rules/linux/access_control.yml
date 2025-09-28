@@ -1,24 +1,57 @@
-filesystem:
-  kernel_modules:
-    - name: cramfs
-      should_be_available: false
-    - name: freevxfs
-      should_be_available: false
-    - name: hfs
-      should_be_available: false
-    - name: hfsplus
-      should_be_available: false
-    - name: jffs2
-      should_be_available: false
-    - name: overlayfs
-      should_be_available: false
-    - name: squashfs
-      should_be_available: false
-    - name: udf
-      should_be_available: false
-    - name: usb-storage
-      should_be_available: false
-    - name: unused_filesystems
-      should_be_available: false
-
-      
+access_control:
+  sshd:
+    permissions:
+      sshd_config: configured
+      private_host_key_files: configured
+      public_host_key_files: configured
+    config:
+      access: configured
+      banner: configured
+      ciphers: configured
+      client_alive_interval: configured
+      client_alive_count_max: configured
+      disable_forwarding: enabled
+      gssapi_authentication: disabled
+      hostbased_authentication: disabled
+      ignore_rhosts: enabled
+      kex_algorithms: configured
+      login_grace_time: configured
+      log_level: configured
+      macs: configured
+      max_auth_tries: configured
+      max_sessions: configured
+      max_startups: configured
+      permit_empty_passwords: disabled
+      permit_root_login: disabled
+      permit_user_environment: disabled
+      use_pam: enabled
+  privilege_escalation:
+    sudo:
+      installed: true
+      use_pty: true
+      log_file_exists: true
+      password_required: true
+      reauthentication_not_disabled_globally: true
+      authentication_timeout_configured: true
+      su_command_access_restricted: true
+  pam:
+    latest_version_installed: true
+    libpam_modules_installed: true
+    libpam_pwquality_installed: true
+    pam_unix_enabled: true
+    pam_faillock_enabled: true
+    pam_pwquality_enabled: true
+    pam_pwhistory_enabled: true
+    password_failed_attempts_lockout_configured: true
+    password_unlock_time_configured: true
+    password_failed_attempts_lockout_includes_root: true
+    password_number_of_changed_characters_configured: true
+    minimum_password_length_configured: true
+    password_same_consecutive_characters_configured: true
+    password_maximum_sequential_characters_configured: true
+    password_dictionary_check_enabled: true
+    password_quality_checking_enforced: true
+    password_quality_enforced_for_root: true
+    password_history_remember_configured: true
+    password_history_enforced_for_root: true
+    pam_pwhistory_includes_use_authtok: true

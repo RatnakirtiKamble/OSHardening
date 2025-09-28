@@ -1,0 +1,26 @@
+network:
+  devices:
+    ipv6_status_identified: true
+    wireless_interfaces_disabled: true
+    bluetooth_services_not_in_use: true
+  kernel_modules:
+    - name: dccp
+      should_be_available: false
+    - name: tipc
+      should_be_available: false
+    - name: rds
+      should_be_available: false
+    - name: sctp
+      should_be_available: false
+  kernel_parameters:
+    ip_forwarding_disabled: true
+    packet_redirect_sending_disabled: true
+    bogus_icmp_responses_ignored: true
+    broadcast_icmp_requests_ignored: true
+    icmp_redirects_not_accepted: true
+    secure_icmp_redirects_not_accepted: true
+    reverse_path_filtering_enabled: true
+    source_routed_packets_not_accepted: true
+    suspicious_packets_logged: true
+    tcp_syn_cookies_enabled: true
+    ipv6_router_advertisements_not_accepted: true

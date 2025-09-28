@@ -1,0 +1,21 @@
+user_accounts:
+  shadow_password_suite:
+    password_expiration_configured: true
+    minimum_password_days_configured: true # Manual check
+    password_expiration_warning_days_configured: true
+    strong_password_hashing_algorithm_configured: true
+    inactive_password_lock_configured: true
+    all_users_last_password_change_in_past: true
+  root_and_system_accounts:
+    root_is_only_uid_0: true
+    root_is_only_gid_0_account: true
+    group_root_is_only_gid_0_group: true
+    root_account_access_controlled: true
+    root_path_integrity: true
+    root_user_umask_configured: true
+    system_accounts_no_valid_login_shell: true
+    accounts_without_valid_shell_are_locked: true
+  user_default_environment:
+    nologin_not_in_etc_shells: true
+    default_user_shell_timeout_configured: true
+    default_user_umask_configured: true

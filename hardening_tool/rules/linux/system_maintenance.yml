@@ -1,0 +1,36 @@
+system_maintenance:
+  system_file_permissions:
+    - path: /etc/passwd
+      permissions_configured: true
+    - path: /etc/passwd-
+      permissions_configured: true
+    - path: /etc/group
+      permissions_configured: true
+    - path: /etc/group-
+      permissions_configured: true
+    - path: /etc/shadow
+      permissions_configured: true
+    - path: /etc/shadow-
+      permissions_configured: true
+    - path: /etc/gshadow
+      permissions_configured: true
+    - path: /etc/gshadow-
+      permissions_configured: true
+    - path: /etc/shells
+      permissions_configured: true
+    - path: /etc/security/opasswd
+      permissions_configured: true
+  world_writable_files_secured: true
+  no_unowned_files_or_dirs: true
+  suid_sgid_files_reviewed: true # Manual check
+  local_user_and_group_settings:
+    accounts_use_shadowed_passwords: true
+    shadow_password_fields_not_empty: true
+    all_groups_in_passwd_exist_in_group: true
+    shadow_group_is_empty: true
+    no_duplicate_uids: true
+    no_duplicate_gids: true
+    no_duplicate_user_names: true
+    no_duplicate_group_names: true
+    local_interactive_user_home_dirs_configured: true
+    local_interactive_user_dot_files_access_configured: true

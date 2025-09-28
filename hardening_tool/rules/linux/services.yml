@@ -1,0 +1,51 @@
+services:
+	server_services:
+		autofs: not_in_use
+		avahi_daemon: not_in_use
+		dhcp_server: not_in_use
+		dns_server: not_in_use
+		dnsmasq: not_in_use
+		ftp_server: not_in_use
+		ldap_server: not_in_use
+		message_access_server: not_in_use
+		nfs: not_in_use
+		nis_server: not_in_use
+		print_server: not_in_use
+		rpcbind: not_in_use
+		rsync: not_in_use
+		samba: not_in_use
+		snmp: not_in_use
+		tftp_server: not_in_use
+		web_proxy_server: not_in_use
+		web_server: not_in_use
+		xinetd: not_in_use
+		x_window_server: not_in_use
+		mail_transfer_agent_local_only: true
+		only_approved_services_listening: true
+	client_services:
+		nis_client: not_installed
+		rsh_client: not_installed
+		talk_client: not_installed
+		telnet_client: not_installed
+		ldap_client: not_installed
+		ftp_client: not_installed
+	time_synchronization:
+		time_sync_in_use: true
+		single_time_sync_daemon_in_use: true
+		systemd_timesyncd:
+			authorized_timeserver_configured: true
+			enabled_and_running: true
+		chrony:
+			authorized_timeserver_configured: true
+			running_as_user_chrony: true
+			enabled_and_running: true
+	job_schedulers:
+		cron_daemon_enabled_and_active: true
+		permissions:
+			etc_crontab: configured
+			etc_cron_hourly: configured
+			etc_cron_daily: configured
+			etc_cron_weekly: configured
+			etc_cron_monthly: configured
+			etc_cron_d: configured
+		crontab_restricted_to_authorized_users: true

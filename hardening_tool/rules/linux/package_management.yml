@@ -1,0 +1,16 @@
+package_management:
+  bootloader:
+    password_set: true
+    config_access_configured: true
+  process_hardening:
+    aslr_enabled: true
+    ptrace_scope_restricted: true
+    core_dumps_restricted: true
+    prelink_not_installed: true
+    automatic_error_reporting_disabled: true
+  banners:
+    local_login_warning_configured: true
+    remote_login_warning_configured: true
+    motd_access_configured: true
+    issue_access_configured: true
+    issue_net_access_configured: true

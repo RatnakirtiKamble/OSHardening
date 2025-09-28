@@ -1,0 +1,10 @@
+host_based_firewall:
+  ufw:
+    installed: true
+    iptables_persistent_not_installed: true
+    service_enabled: true
+    loopback_traffic_configured: true
+    outbound_connections_configured: true # Manual check
+    firewall_rules_exist_for_open_ports: true
+    default_deny_policy: true
+    not_in_use_with_iptables: true
